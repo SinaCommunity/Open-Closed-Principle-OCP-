@@ -1,3 +1,11 @@
+
+/*======================================================================
+                            Initial Code
+========================================================================*/
+/*we have a specific methods for generating reports. 
+To add new formats, the existing code needs to be changed.*/
+
+
 #include <stdio.h>
 #include <string.h>
 
@@ -33,8 +41,13 @@ int main()
 
 
 /*======================================================================
-                             OCP 
+                            OCP-Compliant Version
 ========================================================================*/
+/*To adhere to the OCP, we can use function pointers and structures to add 
+new report formats without modifying existing code.
+In this design, each report format has its dedicated function, and with 
+the ReportFormat structure and an array of these structures, we can 
+easily add new formats without changing the existing generateReport function.*/
 
 
 #include <stdio.h>
@@ -94,6 +107,5 @@ int main()
     generateReport("Excel");
     return 0;
 }
-
 
 
