@@ -1,4 +1,10 @@
 
+/*======================================================================
+                            Initial Code
+========================================================================*/
+/*In this version, the system is tightly coupled to specific customer types,
+ and adding new discount types requires modifying the existing code.*/
+
 #include <stdio.h>
 #include <string.h>
 
@@ -26,9 +32,15 @@ int main() {
     return 0;
 }
 
-/*========================================================================
-                             OCP 
+/*======================================================================
+                            OCP-Compliant Version
 ========================================================================*/
+/*To adhere to the OCP, we can use function pointers and structures to add 
+new discount strategies without modifying the existing code.
+In this design, each customer type has a dedicated discount function, 
+and with the DiscountStrategyEntry structure and an array of these structures, 
+we can easily add new discount strategies without modifying the existing
+ calculateDiscount function.*/
 
 #include <string.h>
 
